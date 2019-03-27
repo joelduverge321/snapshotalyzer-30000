@@ -135,6 +135,7 @@ def list_instances(project):
             )))
 
     return 
+    
 @instances.command('reboot')
 @click.option('--project', default=None,
     help="Only instances for project (tag Prject:<name>)")
