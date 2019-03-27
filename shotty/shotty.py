@@ -135,7 +135,21 @@ def list_instances(project):
             )))
 
     return 
+@instances.command('reboot')
+@click.option('--project', default=None,
+    help="Only instances for project (tag Prject:<name>)")
+def reboot_instances(project):
+    "Reboot EC2 instances"
 
+    instances = filter_instances(project) 
+
+    for i in instances:
+        print(" Rebooting {0}...".format(i.id))
+    else:
+        print(" Could not reboot {0}. ".format(i.id) + str(e))
+    
+    return
+    
 ##STOPPING AN EC2 INSTANCE###
 @instances.command('stop')
 @click.option('--project', default=None,
