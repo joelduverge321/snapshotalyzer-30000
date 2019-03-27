@@ -146,10 +146,10 @@ def reboot_instances(project):
     for i in instances:
         print(" Rebooting {0}...".format(i.id))
     else:
-        print(" Could not reboot {0}. ".format(i.id) + str(e))
+        print(" Could not reboot {0}. ".format(i.id))
     
     return
-    
+
 ##STOPPING AN EC2 INSTANCE###
 @instances.command('stop')
 @click.option('--project', default=None,
